@@ -1,0 +1,69 @@
+#!/usr/bin/env python
+# Inspired by https://vm.tiktok.com/n4MRdv/
+
+import argparse
+
+alphabets = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+]
+
+combinations = []
+for i in alphabets:
+    for e in alphabets:
+        combinations.append(f"{i}{e}")
+
+# For testing
+# for n in range(0, 9):
+#     for letters in combinations[0:10]:
+#         print(f"https://prnt.sc/{letters}{n:04}")
+
+# Creates a 155MB file approximately 🤔 : Don't open in sublime!!!!!!!!!
+with open("all_screenshot_links.txt", mode="w") as f:
+    for n in range(0, 9999 + 1):
+        for letters in combinations:
+            f.write(f"https://prnt.sc/{letters}{n:04}\n")
+
+# Argument approach. Too tired to finish this portion.
+# Its 4:00 AM --ish for crying out loud.
+# parser = argparse.ArgumentParser(description="Generate screenshot links")
+# parser.add_argument(
+#     "Range",
+#     metavar="range",
+#     type=str,
+#     help="Range of digits to append to 'https://prnt.sc/<letters>' in the form 0-999",
+# )
+
+# args = parser.parse_args()
+# range_ = args.Range.split("-")
+
+# start = int(range_[0])
+# end = int(range_[1])
+
+# for n in range(start, end):
+#     for letters in combinations:
+#         print(f"https://prnt.sc/{letters}{n:04}")
